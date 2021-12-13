@@ -1,0 +1,43 @@
+CREATE TABLE `Kunden` (
+  `kunden_id` int PRIMARY KEY AUTO_INCREMENT,
+  `kunden_vorname` varchar(255),
+  `kunden_nachname` varchar(255),
+  `kunden_alter` int,
+  `kunden_pass` varchar(255)
+);
+
+CREATE TABLE `Bestellung` (
+  `Bestellung_id` int PRIMARY KEY AUTO_INCREMENT,
+  `kunden_id` int,
+  `angebot_id` int
+);
+
+CREATE TABLE `Strecke` (
+  `strecke_id` int PRIMARY KEY AUTO_INCREMENT,
+  `strecke_name` varcahr,
+  `strecke_start_zeit` varcahr,
+  `strecke_end_zeit` varcahr,
+  `strecke_kosten` int
+);
+
+CREATE TABLE `Mitarbeiter` (
+  `Mitarbeiter_id` int PRIMARY KEY AUTO_INCREMENT,
+  `Mt_vorname` varchar(255),
+  `Mt_nachname` varchar(255),
+  `Mt_alter` varchar(255),
+  `Mt_beruf` varchar(255),
+  `Mt_gehalt` varchar(255),
+  `Mt_pass` varchar(255)
+);
+
+CREATE TABLE `Bus` (
+  `bus_id` int PRIMARY KEY AUTO_INCREMENT,
+  `bus_sitzplaetze` int,
+  `bus_mitarbeiter` int
+);
+
+CREATE TABLE `angebot` (
+  `angebot_id` int PRIMARY KEY AUTO_INCREMENT,
+  `strecke_id` int,
+  `bus_id` int
+);
